@@ -1,0 +1,10 @@
+.Link {
+  margin-left: 10px;
+}
+.Link:first-child {
+  margin-left: 0
+}
+.Navbar {
+  padding: 20px;
+  background-color: #fafafa;
+}
