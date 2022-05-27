@@ -3,16 +3,25 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Profile from './features/Profile/Profile'
-import Clock from './features/Clock/Clock'
-import { PicSearch } from './components/PicSearch/PicSearch'
+
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import reducers from './reducers'
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import Profile from './features/Profile/Profile'
+// import Clock from './features/Clock/Clock'
+// import { PicSearch } from './components/PicSearch/PicSearch'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <Provider store={createStore(reducers)}>
+      <App />
+    </Provider>
+
+
+    {/* <BrowserRouter>
     <Routes>
       <Route path="/" element={<App/>}> 
         <Route path="clock-app" element={<Clock/>}/>
@@ -23,7 +32,7 @@ root.render(
       <Route path="/" element={<App/>}/>
 
     </Routes>
-    </BrowserRouter>
+    </BrowserRouter> */}
   </React.StrictMode>
 );
 
